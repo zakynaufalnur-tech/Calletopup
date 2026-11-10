@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALLE TOPUP - Top Up Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="#" class="logo">CALLE<span>TOPUP</span></a>
+    <div class="status"><span></span> Layanan Online</div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="badge">⚡ FAST • EASY • SECURE</p>
+        <h1>TOP UP GAME<br><span>JADI LEBIH MUDAH!</span></h1>
+        <p>Beli diamond dan item game favoritmu dengan mudah.</p>
+        <a href="#topup" class="primary-btn">Mulai Top Up ↓</a>
+    </div>
+    <div class="hero-icon">🎮</div>
+</section>
+
+<main id="topup">
+    <div class="section-heading">
+        <p class="eyebrow">GAME FAVORITMU</p>
+        <h2>Pilih Game</h2>
+        <p>Pilih game yang ingin kamu top up.</p>
+    </div>
+
+    <div class="game-grid">
+        <button class="game-card selected" data-game="ml">
+            <div class="game-icon ml">⚔️</div>
+            <strong>Mobile Legends</strong>
+            <small>Diamond</small>
+        </button>
+
+        <button class="game-card" data-game="ff">
+            <div class="game-icon ff">🔥</div>
+            <strong>Free Fire</strong>
+            <small>Diamond</small>
+        </button>
+
+        <button class="game-card" data-game="pubg">
+            <div class="game-icon pubg">🎯</div>
+            <strong>PUBG Mobile</strong>
+            <small>Unknown Cash</small>
+        </button>
+
+        <button class="game-card" data-game="genshin">
+            <div class="game-icon genshin">✨</div>
+            <strong>Genshin Impact</strong>
+            <small>Genesis Crystal</small>
+        </button>
+    </div>
+
+    <div class="checkout-layout">
+        <section class="panel">
+            <div class="step-title">
+                <span>1</span>
+                <div>
+                    <h3>Data Akun</h3>
+                    <p>Masukkan ID akun game kamu.</p>
+                </div>
+            </div>
+
+            <label for="userId">User ID</label>
+            <input
+                id="userId"
+                type="text"
+                placeholder="Masukkan User ID"
+                autocomplete="off"
+            >
+
+            <div id="zoneGroup">
+                <label for="zoneId">Zone ID</label>
+                <input
+                    id="zoneId"
+                    type="text"
+                    placeholder="Masukkan Zone ID"
+                    autocomplete="off"
+                >
+            </div>
+
+            <p class="hint">
+                Pastikan ID akun sudah benar sebelum memesan.
+            </p>
+
+            <div class="step-title next-step">
+                <span>2</span>
+                <div>
+                    <h3>Pilih Nominal</h3>
+                    <p>Pilih paket yang kamu inginkan.</p>
+                </div>
+            </div>
+
+            <div class="diamond-grid" id="nominalGrid"></div>
+
+            <div class="step-title next-step">
+                <span>3</span>
+                <div>
+                    <h3>Metode Pembayaran</h3>
+                    <p>Pilih metode pembayaran.</p>
+                </div>
+            </div>
+
+            <div class="payment-list">
+                <label class="payment-option">
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="QRIS"
+                        checked
+                    >
+                    <span>📱</span>
+                    <span>
+                        <strong>QRIS</strong>
+                        <small>Simulasi pembayaran</small>
+                    </span>
+                </label>
+
+                <label class="payment-option">
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="DANA"
+                    >
+                    <span>💙</span>
+                    <span>
+                        <strong>DANA</strong>
+                        <small>Simulasi pembayaran</small>
+                    </span>
+                </label>
+
+                <label class="payment-option">
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Transfer Bank"
+                    >
+                    <span>🏦</span>
+                    <span>
+                        <strong>Transfer Bank</strong>
+                        <small>Simulasi pembayaran</small>
+                    </span>
+                </label>
+            </div>
+        </section>
+
+        <aside class="panel summary">
+            <h3>Ringkasan Pesanan</h3>
+
+            <div class="summary-game">
+                <div id="summaryIcon">⚔️</div>
+                <div>
+                    <strong id="summaryGame">Mobile Legends</strong>
+                    <small id="summaryItem">Diamond</small>
+                </div>
+            </div>
+
+            <div class="summary-line">
+                <span>Nominal</span>
+                <strong id="summaryNominal">86 Diamond</strong>
+            </div>
+
+            <div class="summary-line">
+                <span>Pembayaran</span>
+                <strong id="summaryPayment">QRIS</strong>
+            </div>
+
+            <div class="summary-line">
+                <span>Harga</span>
+                <strong id="summaryPrice">Rp20.000</strong>
+            </div>
+
+            <div class="total-line">
+                <span>Total Bayar</span>
+                <strong id="totalPrice">Rp20.000</strong>
+            </div>
+
+            <button
+                type="button"
+                class="primary-btn order-btn"
+                id="orderBtn"
+            >
+                Pesan Sekarang →
+            </button>
+
+            <p class="secure-note">
+                🔒 Demo checkout • Tidak ada pembayaran sungguhan
+            </p>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <a href="#" class="logo">CALLE<span>TOPUP</span></a>
+    <p>Top Up Game Favoritmu, Lebih Praktis.</p>
+    <small>© 2026 CALLE TOPUP. Project latihan web.</small>
+</footer>
+
+<!-- MODAL CHECKOUT -->
+<div class="modal" id="orderModal">
+    <div class="modal-box">
+        <div class="success-icon">✓</div>
+
+        <h2>Konfirmasi Pesanan</h2>
+
+        <p id="orderMessage"></p>
+
+        <!-- AREA QRIS DEMO -->
+        <div id="qrisArea" class="qris-area" hidden>
+            <h3>Scan QRIS Demo</h3>
+
+            <p>
+                QR Code ini hanya contoh tampilan
+                untuk latihan website.
+            </p>
+
+            <div class="qr-box">
+                <img
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=CALLE-TOPUP-DEMO"
+                    alt="QR Code demo CALLE TOPUP"
+                >
+            </div>
+
+            <strong id="qrisPrice"></strong>
+
+            <p class="demo-warning">
+                ⚠️ QR ini bukan kode pembayaran QRIS asli.
+                Jangan gunakan untuk membayar.
+            </p>
+        </div>
+
+        <p class="demo-warning">
+            Ini hanya simulasi. Item game belum dikirim
+            dan pembayaran belum dilakukan.
+        </p>
+
+        <button
+            type="button"
+            class="primary-btn"
+            id="closeModal"
+        >
+            Kembali ke Beranda
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
